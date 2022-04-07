@@ -43,7 +43,7 @@ const Home = ({ data }) => {
 
     return (
         <Wrapper>
-            <SEO pageTitle="Home Default" />
+            <SEO pageTitle="Konnected" />
             <Header />
             <main id="main-content">
                 <HeroArea strapi={datastrapi} data={content["hero-section"]} />
@@ -72,7 +72,7 @@ const Home = ({ data }) => {
                         products: productData,
                     }}
                 />
-                <CollectionArea 
+                <CollectionArea
                     data={{
                         ...content["collection-section"],
                         collections: collectionsData.slice(0, 4),
