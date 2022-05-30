@@ -26,7 +26,7 @@ const Header = ({ className }) => {
         authenticate({
             provider: "web3Auth",
             clientId:
-                "BPgYPiKuDD1LfzuGOnDOxiTH01vrQa3i8ATBzfCPRM-UH3OA071Qwa4CCZ69P1yqLebEXniU1GIIwc8wSCvNHZQ",
+                "BJS4duovNhVZgCxdxDAFjxJzyAyYlF54fZktrdUu8Rht2sb1elRUa8UbHachKq-Oc5MZrKTsEoftUmXpfuHc9hw",
             chainId: Moralis.Chains.ETH_RINKBEY,
             loginMethodsOrder: [
                 "google",
