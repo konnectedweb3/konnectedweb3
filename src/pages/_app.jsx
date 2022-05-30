@@ -9,8 +9,8 @@ import "../assets/css/feather.css";
 import "../assets/scss/style.scss";
 import "react-toastify/dist/ReactToastify.css";
 
-const moralisAppId = "DAm7expO5NrZGXfiiMpNKk2gLP01dch34Q66Wtb2";
-const moralisServerURL = "https://5untbynbshk2.usemoralis.com:2053/server";
+const moralisAppId = "BekWKVxa0YRHsk5DLIhy6VRRHtqfxlphIDMJd8M5";
+const moralisServerURL = "https://t27calgrqo5g.usemoralis.com:2053/server";
 
 const MyApp = ({ Component, pageProps }) => {
     const router = useRouter();

@@ -2,8 +2,10 @@ import Image from "next/image";
 import Anchor from "@ui/anchor";
 import { useRouter } from "next/router";
 import { useMoralis } from "react-moralis";
+import truncateEthAddress from "truncate-eth-address";
+
 const UserDropdown = () => {
-    const { logout } = useMoralis();
+    const { logout, Moralis, user } = useMoralis();
     const router = useRouter();
     return (
         <div className="icon-box">
@@ -24,41 +26,13 @@ const UserDropdown = () => {
                     <span>
                         <Anchor path="/product">Set Display Name</Anchor>
                     </span>
+                    <p className="eth-address-dropdown">
+                        {user.attributes.accounts}
+                    </p>
                 </div>
                 <div className="rn-product-inner">
                     <ul className="product-list">
                         <li className="single-product-list">
-                            <div className="thumbnail">
-                                <Anchor path="/product">
-                                    <Image
-                                        src="/images/portfolio/portfolio-07.jpg"
-                                        alt="Nft Product Images"
-                                        layout="fixed"
-                                        width={50}
-                                        height={50}
-                                    />
-                                </Anchor>
-                            </div>
-                            <div className="content">
-                                <h6 className="title">
-                                    <Anchor path="/product">Balance</Anchor>
-                                </h6>
-                                <span className="price">25 ETH</span>
-                            </div>
-                            <div className="button" />
-                        </li>
-                        <li className="single-product-list">
-                            <div className="thumbnail">
-                                <Anchor path="/product">
-                                    <Image
-                                        src="/images/portfolio/portfolio-01.jpg"
-                                        alt="Nft Product Images"
-                                        layout="fixed"
-                                        width={50}
-                                        height={50}
-                                    />
-                                </Anchor>
-                            </div>
                             <div className="content">
                                 <h6 className="title">
                                     <Anchor path="/product">Balance</Anchor>
@@ -72,9 +46,9 @@ const UserDropdown = () => {
                 <div className="add-fund-button mt--20 pb--20">
                     <Anchor
                         className="btn btn-primary-alta w-100"
-                        path="/connect"
+                        path="/author"
                     >
-                        Add Your More Funds
+                        View Profile
                     </Anchor>
                 </div>
                 <ul className="list-inner">

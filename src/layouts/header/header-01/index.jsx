@@ -19,7 +19,26 @@ const Header = ({ className }) => {
     const sticky = useSticky();
     const { offcanvas, offcanvasHandler } = useOffcanvas();
     const { search, searchHandler } = useFlyoutSearch();
-    const { authenticate, isAuthenticated } = useMoralis();
+
+    const { authenticate, authError, isAuthenticated, Moralis } = useMoralis();
+
+    const handleCustomLogin = async () => {
+        authenticate({
+            provider: "web3Auth",
+            clientId:
+                "BPgYPiKuDD1LfzuGOnDOxiTH01vrQa3i8ATBzfCPRM-UH3OA071Qwa4CCZ69P1yqLebEXniU1GIIwc8wSCvNHZQ",
+            chainId: Moralis.Chains.ETH_RINKBEY,
+            loginMethodsOrder: [
+                "google",
+                "facebook",
+                "twitter",
+                "line",
+                "kakao",
+                "wechat",
+                "email_passwordless",
+            ],
+        });
+    };
 
     return (
         <>
@@ -66,7 +85,7 @@ const Header = ({ className }) => {
                                             color="primary-alta"
                                             className="connectBtn"
                                             size="small"
-                                            onClick={() => authenticate()}
+                                            onClick={handleCustomLogin}
                                         >
                                             Wallet connect
                                         </Button>
