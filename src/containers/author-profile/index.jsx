@@ -21,16 +21,20 @@ const AuthorProfileArea = ({ className, data }) => {
     const useraddress = user != null && user.get("ethAddress");
     useEffect(() => {
         if (isAuthenticated) {
-            Moralis.Web3API.account.getNFTs({address: `${useraddress}`, chain: 'rinkeby'})
-            .then((data) => {
-                let gear = data.result;
-                setValue(gear);
-            });
+            Moralis.Web3API.account
+                .getNFTs({
+                    address: "0x45FE82e8998Ac2FADb4142117af88035cBE707EA",
+                    chain: "mainnet",
+                })
+                .then((data) => {
+                    let gear = data.result;
+                    setValue(gear);
+                });
         }
     }, [isAuthenticated, Moralis]);
     const newdata = value.map((el) => JSON.parse(el.metadata));
-    console.log(newdata,"filter")
-    console.log(value,"<<<<")
+    console.log(newdata, "filter");
+    console.log(value, "<<<<");
 
     return (
         <div className={clsx("rn-authore-profile-area", className)}>
