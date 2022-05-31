@@ -655,3 +655,16 @@ input[type="search"]::-webkit-search-results-decoration {
     margin-top: 10px;
     font-size: 14px;
 }
+
+/**** konnected code css ****/
+
+#w3a-modal button.w3a-header__button {
+    cursor: pointer;
+    position: absolute;
+    background: none;
+    padding: 10px;
+    border: 0;
+    top: 0;
+    right: 0;
+    text-align: right;
+}
