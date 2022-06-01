@@ -22,10 +22,7 @@ const AuthorProfileArea = ({ className, data }) => {
     useEffect(() => {
         if (isAuthenticated) {
             Moralis.Web3API.account
-                .getNFTs({
-                    address: "0x45FE82e8998Ac2FADb4142117af88035cBE707EA",
-                    chain: "mainnet",
-                })
+                .getNFTs({ address: `${useraddress}`, chain: "rinkeby" })
                 .then((data) => {
                     let gear = data.result;
                     setValue(gear);
